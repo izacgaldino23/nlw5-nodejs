@@ -33,6 +33,14 @@ class UsersService {
         // Se existir retornar usuário
         return user
     }
+
+    async findByEmail(email: string) {
+        const user = await this.repository.findOne({
+            email
+        })
+
+        return user
+    }
 }
 
 export { UsersService }
